@@ -1,4 +1,2 @@
 /target
 .vscode/launch.json
-src/math_driver.rs
-src/main.rs
