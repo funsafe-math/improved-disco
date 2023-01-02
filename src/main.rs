@@ -151,9 +151,8 @@ impl TaylorApp {
             );
             self.current_epsilon =
                 calculate_error_simple(&self.points_approximated, &self.points_exact);
-            if self.current_epsilon < self.target_epsilon
-                || self.n_divisions >= 50_000
-                || self.current_epsilon.is_nan()
+            if self.current_epsilon < self.target_epsilon || self.n_divisions >= 50_000
+            // || self.current_epsilon.is_nan()
             {
                 break;
             }
