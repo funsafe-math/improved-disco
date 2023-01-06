@@ -6,9 +6,7 @@ Jeżeli funkcja należy do klasy $C^{\infty}$ w otoczeniu punktu $x$, możemy j�
 $$y(x+h) = y(x) + y'(x) \cdot h + \frac{y''(x)}{2!}\cdot h^2 + \frac{y'''(x)}{3!}\cdot h^3 + \dots$$
 
 Który można również zapisać w postaci z resztą Lagrange'a:
-$$
-y(x+h) = y(x) + y'(x) \cdot h + \frac{y''(x)}{2!}\cdot h^2 + \dots + \frac{y^{(n)}(x+\theta h)}{n!}\cdot h^n\quad \text{gdzie } \theta \in(0,1)
-$$
+$$y(x+h) = y(x) + y'(x) \cdot h + \frac{y''(x)}{2!}\cdot h^2 + \dots + \frac{y^{(n)}(x+\theta h)}{n!}\cdot h^n\quad \text{gdzie } \theta \in(0,1)$$
 
 Metodę pozwalającą na uzyskanie przybliżonej wartości funkcji w $x + h$,
 znając wartość $f(x)$  poprzez odrzucenie wszystkich pochodnych od $(n + 1)$ stopnia wzwyż nazywamy _metodą Taylora $n$-tego rzędu_.
@@ -17,9 +15,7 @@ Znając wartość dokładną lub przybliżoną rozwiązania w punkcie $x_0$ moż
 $x_0+h$, za jej pomocą $x_0+2h$, a za jej pomocą $x_0+3h$ itd. ad infinitum.
 
 Na błąd lokalny metody $n$-tego rzędu składa się odrzucona reszta, która wynosi 
-$$
-Rn=\frac{f^{(n + 1)}(x + \theta h)}{(n+1)!}\cdot h(n+1)\quad   \theta\in (0,1)
-$$
+$$R_n=\frac{f^{(n + 1)}(x + \theta h)}{(n+1)!}\cdot h(n+1)\quad   \theta\in (0,1)$$
 Błędy lokalne uzyskiwane przy każdym kroku kumulują się dając w efekcie błąd globalny.
 
 ## Wymagania sprzętowe
@@ -47,8 +43,6 @@ Wykres jest uzyskiwany poprzez:
 - założenie początkowej ilości przedziałów
 - stworzenie dwóch wektorów wartości — wyprowadzonej analitycznie oraz przybliżonej
 - liczona różnica między wartością dokładną a przybliżoną używając wzoru
-$$
-\varepsilon = \sqrt{\sum_i^n (x_i - \bar{x}_i)^2}
-$$
+$$\varepsilon = \sqrt{\sum_i^n (x_i - \bar{x}_i)^2}$$
 - jeśli różnica jest mniejsza od zadanej dokładności — oba wyniki są prezentowane na wykresie
 - w przeciwny wypadku, proces jest powtarzany dla zdwojonej liczby przedziałów
