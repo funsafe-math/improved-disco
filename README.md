@@ -15,7 +15,7 @@ Znając wartość dokładną lub przybliżoną rozwiązania w punkcie $x_0$ moż
 $x_0+h$, za jej pomocą $x_0+2h$, a za jej pomocą $x_0+3h$ itd. ad infinitum.
 
 Na błąd lokalny metody $n$-tego rzędu składa się odrzucona reszta, która wynosi 
-$$R_n=\frac{f^{(n + 1)}(x + \theta h)}{(n+1)!}\cdot h(n+1)\quad   \theta\in (0,1)$$
+$$R_n=\frac{f^{(n + 1)}(x + \theta h)}{(n+1)!}\cdot h^{(n+1)}\quad   \theta\in (0,1)$$
 Błędy lokalne uzyskiwane przy każdym kroku kumulują się dając w efekcie błąd globalny.
 
 ## Wymagania sprzętowe
