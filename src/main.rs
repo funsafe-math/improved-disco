@@ -135,7 +135,7 @@ impl TaylorApp {
         let tick = Instant::now();
         let xy = self.starting_conditions();
         let (x, _) = xy;
-        self.n_divisions = 10;
+        self.n_divisions = 3;
         loop {
             self.points_approximated = taylor_method(
                 xy,

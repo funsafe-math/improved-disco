@@ -1,4 +1,4 @@
-use std::cmp::max;
+use factorial::Factorial;
 
 use crate::util::FunctionDetails;
 
@@ -68,7 +68,7 @@ pub fn taylor_method(
         let y: f64 = ys
             .iter()
             .enumerate()
-            .map(|(k, v)| h.powf(k as f64) * v / max(1, k) as f64)
+            .map(|(k, v)| h.powf(k as f64) * v / k.factorial() as f64)
             .sum();
         x = x0 + i as f64 * (length) / (n_points - 1) as f64;
         result.push([x, y]);
