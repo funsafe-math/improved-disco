@@ -9,7 +9,7 @@ Który można również zapisać w postaci z resztą Lagrange'a:
 $$y(x+h) = y(x) + y'(x) \cdot h + \frac{y''(x)}{2!}\cdot h^2 + \dots + \frac{y^{(n)}(x+\theta h)}{n!}\cdot h^n\quad \text{gdzie } \theta \in(0,1)$$
 
 Metodę pozwalającą na uzyskanie przybliżonej wartości funkcji w $x + h$,
-znając wartość $f(x)$  poprzez odrzucenie wszystkich pochodnych od $(n + 1)$ stopnia wzwyż nazywamy *metodą Taylora $n$-tego rzędu*.
+znając wartość $f(x)$  poprzez odrzucenie wszystkich pochodnych od $(n + 1)$ stopnia wzwyż nazywamy *metodą Taylora n-tego rzędu*.
 
 Znając wartość dokładną lub przybliżoną rozwiązania w punkcie $x_0$ możemy obliczyć wartość w 
 $x_0+h$, za jej pomocą $x_0+2h$, a za jej pomocą $x_0+3h$ itd. ad infinitum.
