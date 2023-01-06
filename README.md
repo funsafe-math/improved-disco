@@ -3,9 +3,7 @@
 Metoda Taylora pozwala nam na otrzymanie z dużą dokładnością przybliżonych wartości dla równania różniczkowego z zagadnieniem początkowym.
 
 Jeżeli funkcja należy do klasy $C^{\infty}$ w otoczeniu punktu $x$, możemy ją przedstawić jako szereg Taylora:
-$$
-y(x+h) = y(x) + y'(x) \cdot h + \frac{y''(x)}{2!}\cdot h^2 + \frac{y'''(x)}{3!}\cdot h^3 + \dots
-$$
+$$ y(x+h) = y(x) + y'(x) \cdot h + \frac{y''(x)}{2!}\cdot h^2 + \frac{y'''(x)}{3!}\cdot h^3 + \dots $$
 
 Który można również zapisać w postaci z resztą Lagrange'a:
 $$
