@@ -37,6 +37,10 @@ enum DropdownOptions {
     Second,
     Third,
     Fourth,
+    Fith,
+    Sixth,
+    Seventh,
+    Eigth,
 }
 
 impl DropdownOptions {
@@ -72,6 +76,53 @@ impl DropdownOptions {
                 function: vec![|x, y| y[0].powi(2) + 4.0, |x, y| 2.0 * y[0] * y[1]],
                 solution: |x, (x0, y0)| 2.0 * (2.0 * x - 2.0 * x0 + (y0 / 2.0).atan()).tan(),
                 name: "y² + 4",
+            },
+            DropdownOptions::Fith => FunctionDetails {
+                function: vec![
+                    |x, y| 2.0 * x.exp() + 2.0 * y[0], // f
+                    |x, y| 2.0 * x.exp() + 2.0 * y[1], // f'
+                ],
+                solution: |x, (x0, y0)| {
+                    x.exp() * ((x - 2.0 * x0).exp() * y0 + 2.0 * (x - x0).exp() - 2.0)
+                },
+                name: "2exp(x) + 2y",
+            },
+            DropdownOptions::Sixth => FunctionDetails {
+                function: vec![|x, y| x.exp() + 6.0 * y[0], |x, y| x.exp() + 6.0 * y[1]],
+                solution: |x, (x0, y0)| {
+                    1.0 / 5.0
+                        * x.exp()
+                        * (5.0 * (5.0 * x - 6.0 * x0).exp() * y0 + (5.0 * x - 5.0 * x0).exp() - 1.0)
+                },
+                name: "exp(x) + 6y",
+            },
+            DropdownOptions::Seventh => FunctionDetails {
+                function: vec![
+                    |x, y| x.powi(3) - x + 6.0 * x * y[0], // f
+                    |x, y| 3.0 * x.powi(2) - 1.0 + 6.0 * (1.0 * y[0] + x * y[1]), // f'
+                ],
+                solution: |x, (x0, y0)| {
+                    1.0 / 18.0
+                        * ((3.0 * x.powi(2) - 3.0 * x0.powi(2)).exp()
+                            * (3.0 * x.powi(2) + 18.0 * y0 - 2.0)
+                            - 3.0 * x.powi(2)
+                            + 2.0)
+                },
+                name: "x³ - x +6xy",
+            },
+            DropdownOptions::Eigth => FunctionDetails {
+                function: vec![
+                    |x, y| 4.0 * x.sin() - 2.0 * y[0] / x, // f
+                    |x, y| 2.0 * (x * (2.0 * x * x.cos() - y[1]) + y[0]) / x.powi(2), // |x, y| 3.0 * x.powi(2) - 1.0 + 6.0 * (1.0 * y[0] + x * y[1]), // f'
+                ],
+                solution: |x, (x0, y0)| {
+                    (x0.powi(2) * y0 - 4.0 * (-2.0 + x.powi(2)) * x.cos()
+                        + 4.0 * (-2.0 + x0.powi(2)) * x0.cos()
+                        + 8.0 * x * x.sin()
+                        - 8.0 * x0 * x0.sin())
+                        / x.powi(2)
+                },
+                name: "4sin(x) - 2y/x",
             },
         }
     }
@@ -109,7 +160,7 @@ impl Default for TaylorApp {
             points_exact: Default::default(),
             target_epsilon: 0.1,
             current_epsilon: f64::INFINITY,
-            n_divisions: 10,
+            n_divisions: 3,
             calculations_duration: Duration::new(0, 0),
             last_args: (0.0, 0.0, DropdownOptions::default(), 0.0),
         }
@@ -216,7 +267,7 @@ impl eframe::App for TaylorApp {
                     ui.add(
                         DragValue::new(&mut self.target_epsilon)
                             .speed(0.01)
-                            .clamp_range(0.01..=10.0)
+                            .clamp_range(0.001..=10.0)
                             .prefix("ε:"),
                     );
                 });
